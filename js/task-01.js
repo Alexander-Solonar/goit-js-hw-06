@@ -1,23 +1,24 @@
-const ulEl = document.querySelector("#categories");
-const allItemEl = ulEl.querySelectorAll(".item");
-const allTitelEl = ulEl.querySelectorAll("h2");
+const galleryEl = document.querySelector("#categories");
 
-console.log(`Number of categories: ${ulEl.children.length}`);
+console.log(`Number of categories: ${galleryEl.childElementCount}`);
 
-console.log(`Category: ${allTitelEl[0].textContent}`);
 console.log(
-  `Elements: ${allItemEl[0].lastElementChild.querySelectorAll("li").length}`
+  `Category: ${galleryEl.firstElementChild.firstElementChild.textContent}`
+);
+console.log(
+  `Elements: ${galleryEl.firstElementChild.lastElementChild.childElementCount}`
 );
 
-console.log(`Category: ${allTitelEl[1].textContent}`);
 console.log(
-  `Elements: ${allItemEl[1].lastElementChild.querySelectorAll("li").length}`
+  `Category: ${galleryEl.firstElementChild.nextElementSibling.firstElementChild.textContent}`
+);
+console.log(
+  `Elements: ${galleryEl.firstElementChild.nextElementSibling.lastElementChild.childElementCount}`
 );
 
-console.log(`Category: ${allTitelEl[allTitelEl.length - 1].textContent}`);
 console.log(
-  `Elements: ${
-    allItemEl[allItemEl.length - 1].lastElementChild.querySelectorAll("li")
-      .length
-  }`
+  `Category: ${galleryEl.lastElementChild.firstElementChild.textContent}`
+);
+console.log(
+  `Elements: ${galleryEl.lastElementChild.lastElementChild.childElementCount}`
 );

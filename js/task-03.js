@@ -15,16 +15,9 @@ const images = [
 
 const galleryUlEl = document.querySelector(".gallery");
 
-const arrayNewEl = [];
-const creategallery = images.map((element) => {
-  const newgalleryEl = document.createElement("li");
-  newgalleryEl.classList.add("gallery__item");
-
-  const addimgEl = newgalleryEl.insertAdjacentHTML(
+const creategallery = images.map(({ url, alt }) => {
+  const addimgEl = galleryUlEl.insertAdjacentHTML(
     "beforeend",
-    `<img src = "${element.url}"  alt = "${element.alt}" width = 360>`
+    `<li class = "gallery__item"><img src = "${url}"  alt = "${alt}" width = 360> </li>`
   );
-  arrayNewEl.push(newgalleryEl);
 });
-
-galleryUlEl.append(...arrayNewEl);
