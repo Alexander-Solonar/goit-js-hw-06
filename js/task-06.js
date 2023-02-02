@@ -3,5 +3,5 @@ textInput.addEventListener("blur", (event) => {
   textInput.classList =
     event.currentTarget.value.length === Number(textInput.dataset.length)
       ? "valid"
-      : "invalid";222222222222222222222
+      : "invalid";
 });
