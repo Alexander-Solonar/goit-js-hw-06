@@ -9,7 +9,7 @@ const ingredients = [
 
 const ingredientsUlEl = document.querySelector("#ingredients");
 const addItem = [];
-const createLi = ingredients.map((element) => {
+ingredients.map((element) => {
   const newLiEl = document.createElement("li");
   newLiEl.classList.add("item");
   newLiEl.textContent = element;
