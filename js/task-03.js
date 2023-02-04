@@ -15,9 +15,14 @@ const images = [
 
 const galleryUlEl = document.querySelector(".gallery");
 
+const arrayEl = [];
 images.map(({ url, alt }) => {
-  galleryUlEl.insertAdjacentHTML(
+  const galleryItem = document.createElement("li");
+  galleryItem.classList.add("gallery__item");
+  galleryItem.insertAdjacentHTML(
     "beforeend",
-    `<li class = "gallery__item"><img src = "${url}"  alt = "${alt}" width = 360> </li>`
+    `<img src = "${url}"  alt = "${alt}" width = 360>`
   );
+  arrayEl.push(galleryItem);
 });
+galleryUlEl.append(...arrayEl);
