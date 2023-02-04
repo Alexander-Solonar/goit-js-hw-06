@@ -15,14 +15,9 @@ const images = [
 
 const galleryUlEl = document.querySelector(".gallery");
 
-const arrayEl = [];
-images.map(({ url, alt }) => {
-  const galleryItem = document.createElement("li");
-  galleryItem.classList.add("gallery__item");
-  galleryItem.insertAdjacentHTML(
-    "beforeend",
-    `<img src = "${url}"  alt = "${alt}" width = 360>`
-  );
-  arrayEl.push(galleryItem);
-});
-galleryUlEl.append(...arrayEl);
+const makeListImg = ({ url, alt }) => {
+  return `<li class = "gallery__item"><img src = "${url}"  alt = "${alt}" width = 360></li>`;
+};
+const makeGallery = images.map(makeListImg).join("");
+galleryUlEl.insertAdjacentHTML("afterbegin", makeGallery);
+
